@@ -12,6 +12,7 @@ It encodes a two-executor workflow:
 - `SKILL.md`: the skill definition
 - `agents/openai.yaml`: UI metadata
 - `references/wrapper-lessons.md`: lessons generalized from a real wrapper project
+- `references/safari-js-injection.md`: Safari-specific fallback tactics for macOS-hosted wrappers
 
 ## Install
 

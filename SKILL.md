@@ -56,6 +56,7 @@ description: Build, modify, debug, or review a local wrapper around a website's 
   - task builders or payload builders
 - If the repo already has a site-specific wrapper example, read the matching reference note in `references/`.
 - For lessons from a real consumer-web wrapper project, read `references/wrapper-lessons.md`.
+- For Safari-only sites or Mac-hosted wrappers driven by AppleScript JS injection, read `references/safari-js-injection.md`.
 
 ## Guardrails
 
@@ -65,6 +66,15 @@ description: Build, modify, debug, or review a local wrapper around a website's 
 - Return real upstream failures instead of masking them as success.
 - Gate debug routes explicitly and document that they may be disabled by default.
 - Preserve exact observed behavior before "cleaning up" a flow that is fragile.
+
+## Platform Fallbacks
+
+- If Chrome/CDP-style control is unavailable or the target flow is already anchored to Safari on macOS, use a Safari fallback instead of forcing the default stack.
+- In that case, treat AppleScript `do JavaScript` as the page-evaluation primitive, and keep the same separation of concerns:
+  - Safari JS injection for execution
+  - higher-visibility inspection tools only for diagnosis
+- Prefer Safari fallback only when it is the simplest reliable path for that site or environment.
+- Do not generalize a Safari-specific tactic into the default architecture for all wrappers.
 
 ## Common Pitfalls
 
@@ -87,3 +97,4 @@ description: Build, modify, debug, or review a local wrapper around a website's 
 ## References
 
 - `references/wrapper-lessons.md`
+- `references/safari-js-injection.md`
