@@ -1,0 +1,4 @@
+interface:
+  display_name: "Browser Wrapper Dev"
+  short_description: "Reverse engineering workflow for private web wrappers."
+  default_prompt: "Use $browser-wrapper-dev to build or debug a private web API wrapper, keep Playwright as the production executor, and use chrome-webmcp for diagnosis and reverse engineering."
